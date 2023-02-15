@@ -94,7 +94,7 @@ a:link, a:visited {
 .item-yellow{
     background-color: #ffb400;
     position: relative;
-    /* z-index:75; */
+    z-index: 75;
 }
 .item-blue{
     background-color: #5ea3ec;
@@ -133,9 +133,12 @@ h1 span{
     animation-timing-function: linear;
 }
 
-main{
+main, footer{
     width: calc(100% - 180px);
     
+}
+main{
+    position: relative;
 }
 #section-01{    
     width: 100%;
@@ -147,8 +150,10 @@ main{
     opacity: 0;
     object-fit: cover;
 }
-#section-02, #section-03, footer{
+#section-02, #section-03{
     width: 100%;
+}
+#section-02, #section-03, footer{
     padding: 60px;
 }
 
@@ -193,6 +198,7 @@ h2{
 
 .cont-dates{
     position: relative;
+    z-index: 0;
     padding: 75px 0 100px;
     background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0);
     background-position: 0 0,0 100%,left 14px,0 calc(100% - 14px);
@@ -220,16 +226,16 @@ h2{
     text-align: center;    
     background: #fff;
     border: 1px solid #000;
-    transition: background .6s cubic-bezier(.23,1,.32,1),color .6s cubic-bezier(.23,1,.32,1);
+    transition: all .6s cubic-bezier(.23,1,.32,1),color .6s cubic-bezier(.23,1,.32,1);
 }
 .btn:hover{
     background: #000;
     text-shadow: none;
     color: #fff;
 }
-#section-03 .btn{
-    transform: translateX(-50%);
-    position: absolute;    
+.cont-dates .btn{    
+    position: absolute;  
+    transform: translateX(-50%);  
     bottom: -20px;
     left: 50%;
 }
@@ -238,7 +244,6 @@ h2{
     grid-template-columns: repeat(2,1fr);
     grid-column-gap: 60px;
     margin-bottom: 10px;
-    position: relative;
 }
 .cont-adress-text{
     padding: 90px 30px;
@@ -359,15 +364,111 @@ input{
     right: 0;
 }
 
+/* Color sections */
 
+#food-section{   
+    padding: 60px;
+    width: 100%;
+}
+.first-rang{
+    display: flex;
+    justify-content: space-between;
+}
+.schedule{
+    text-align: right;
+}
+.second-rang{
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    align-items: center;
+}
+.second-rang h2 {
+    font-family: 'ogg', serif; 
+    font-size: 220px;
+    line-height: 200px;
+    color: #000;
+    letter-spacing: 0;
+    width: 80%;
+}
+.img-cont{
+    position: relative;
+}
+.img-cont img{
+    position: relative;
+    right: 35px;
+    width: 100%;
+    height: 500px;
+    max-width: 378px;
+    object-fit: cover;
+} 
+.img-cont p{
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 75px;
+    margin: 0;
+}
 
-
-
-
-
-
-
-
+.vertical-text{
+    display: inline-block;
+    position: relative;
+    left: -6px;
+    font-family: apercu mono,sans-serif;
+    font-size: 16px;
+    color: #000;
+    transform: rotate(90deg);
+    margin-bottom: 115px;
+}
+.vertical-text:after {
+    position: absolute;
+    content: "\21E3";
+    color: #000;
+    font-size: 24px;
+    bottom: -6px;
+    transform: rotate(-90deg);
+    right: -30px;
+}
+.menu-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 80px 60px;
+    margin-bottom: 100px;
+}
+.menu-grid .rest-container{
+    position: relative;
+}
+.menu-grid span{
+    font-family: 'apercu', sans-serif;
+    font-size: 16px;
+    color: #000;
+    display: block;
+    margin-bottom: 30px;
+}
+.menu-grid h3{
+    font-family: 'ogg',sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0;
+    color: #000;
+    cursor: pointer;
+    z-index:99;
+    position: relative;
+}
+.menu-grid .hiddenimg{
+    position: absolute;
+    left: 0%;
+    bottom: 70%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s  ease-in-out;
+    z-index:2;
+}
+.txt-to-hover:hover ~ .hiddenimg {
+    opacity: 1;
+    transition: opacity 0.5s  ease-in-out;  
+}
 
 
 
