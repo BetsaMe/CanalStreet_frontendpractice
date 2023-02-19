@@ -42,7 +42,7 @@ $(".panel.open").click(function () {
 
 // logo animation
 $(".item-yellow, .item-blue, .item-red").click(function () {
-  gsap.to(".home-content", 0.1, { display: "none", opacity: 0 });
+  gsap.to(".home-content", 0.3, { display: "none", opacity: 0});
   gsap.to(".logo", {
     height: "40px",
     width: "40px",
@@ -58,26 +58,48 @@ $(".home").click(function () {
     left: "60px",
     duration: 0.3,
   });
+  gsap.to("#food-section", 0, { display: "none", opacity: 0 });
   gsap.to("footer, main", { "margin-left": "0", duration: 0.1 });
-  gsap.to("#food-section", 0.1, { display: "none", opacity: 0 });
-  gsap.to(".home-content", 0.8, { display: "block", opacity: 1 });
+  gsap.to(".home-content", 0.8, { display: "block", opacity: 1});
 });
 
-$(".item-yellow").click(() => {
-  gsap.to("footer, main", { "margin-left": "60", duration: 0.1 });
-  gsap.to("#food-section", 1.2, { display: "block", opacity: 1 });
+$(".item-yellow").click(() => { 
+  let tl = gsap.timeline();
+      tl.to("footer", 0, { "display": "none", opacity: 0 })
+        .to("footer, main", { "margin-left": "60", duration: 1 })      
+        .to("#food-section, footer", 0.5, { display: "block", opacity: 1});
 });
 
 $(".item-blue").click(() => {
-  gsap.to("footer, main", { "margin-left": "120", duration: 0.1 });
-  gsap.to("#food-section", 0.1, { display: "none", opacity: 0 });
+    gsap.to("footer, main", { "margin-left": "120", duration: 0.1 });
+    gsap.to("#food-section", 0, { display: "none", opacity: 0 });
 });
 
 $(".item-red").click(() => {
-  gsap.to("footer, main", { "margin-left": "180", duration: 0.1 });
-  gsap.to("#food-section", 0.1, { display: "none", opacity: 0 });
+    gsap.to("footer, main", { "margin-left": "180", duration: 0.1 });
+    gsap.to("#food-section", 0, { display: "none", opacity: 0 });
 });
+
+$(".menu-nav-icon").click(() => {
+    gsap.to("footer, main, .logo", 0, { "display": "none", opacity: 0 });
+    gsap.to(".menu-movil", 0.5, { display: "block", opacity: 1});
+    gsap.to(".menu-nav-icon", 0.5, { opacity: 0});
+});
+
 
 // document.querySelector(".home").onclick = () => toggleMenu;
 
 // gsap.from(".panel", {height: 100, opacity:1, duration: 0.3, stagger: 0.1});
+
+
+  // gsap.to(".item-yellow, .item-blue, .item-red", { "width": "60", duration: 0.3 });
+  // gsap.to(".home", { "width": "100%", duration: 0.3 });
+
+   // gsap.to(".home, .item-blue, .item-red", { "width": "60", duration: 0.3 });
+  // gsap.to(".item-yellow", { "width": "100%", duration: 0.3 });
+
+    // gsap.to(".home, .item-yellow, .item-red", { "width": "60", duration: 0.3 });
+  // gsap.to(".item-blue", { "width": "100%", duration: 0.3 });
+
+    // gsap.to(".home, .item-yellow, .item-blue", { "width": "60", duration: 0.3 });
+  // gsap.to(".item-red", { "width": "100%", duration: 0.3 });
