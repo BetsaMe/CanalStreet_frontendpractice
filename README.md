@@ -1,4 +1,4 @@
-# Canal Street Market
+# Canal Street Market.
 
 I recreated the home page of the website as part of a challenge created by Frontend Practice www.frontendpractice.com
 
